@@ -1,0 +1,15 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: sre-app
+  namespace: default
+spec:
+  components:
+    - name: sre-app
+      type: webservice
+      properties:
+        image: kparler/pythondjango:master_202302280002 # {"$imagepolicy":"default:image-gitops"}
+        secretRef: docekr-pan
+        port: 8080
+        cmd: ["python", "manage.py", "runserver", "127.0.0.0:8080"]
+
