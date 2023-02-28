@@ -9,7 +9,7 @@ spec:
       type: webservice
       properties:
         image: index.docker.io/kparler/pythondjango:master_202302280002 # {"$imagepolicy":"default:image-gitops"}
-        secretRef: docekr-pan
+        # secretRef: docekr-pan
         port: 8080
         cmd: ["python", "manage.py", "runserver", "127.0.0.0:8080"]
 
